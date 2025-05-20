@@ -6,11 +6,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { usePostHog } from 'posthog-js/react'
 
 
 const App = () => {
-  // Move QueryClient initialization inside the component
+  
+  const posthog = usePostHog()
+
+  useEffect(() => {
+    posthog.capture('page opened', { page: window.location.pathname })
+  }, [posthog])
+
   const [queryClient] = useState(() => new QueryClient());
   
   return (
