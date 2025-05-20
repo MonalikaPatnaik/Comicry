@@ -9,29 +9,10 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <BookOpen size={32} className="text-blue-100" />
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Comic Creator</h1>
+            <h1 className="text-2xl font-bold tracking-tight">Comicry</h1>
             <p className="text-sm text-blue-100">Tell your story</p>
           </div>
         </div>
-        
-        <nav className="hidden md:flex items-center gap-6">
-          <a 
-            href="https://example.com/docs" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-100 hover:text-white transition-colors"
-          >
-            Tutorials
-          </a>
-          <a 
-            href="https://example.com/community" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-100 hover:text-white transition-colors"
-          >
-            Community
-          </a>
-        </nav>
         
         <div className="flex items-center gap-2">
           <Button size="sm" variant="secondary" className="hidden sm:flex items-center gap-2">

@@ -12,28 +12,10 @@ const Footer = () => {
               © {new Date().getFullYear()} Comic Creator
             </p>
           </div>
-          
-          <div className="flex gap-6">
-            <a 
-              href="https://example.com/docs" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-blue-300 hover:text-white transition-colors"
-            >
-              Tutorials
-            </a>
-            <a 
-              href="https://example.com/community" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-blue-300 hover:text-white transition-colors"
-            >
-              Community
-            </a>
-          </div>
-          
+          <p className="flex gap-2">Made with <Heart size={14} className="text-blue-400" /> for storytellers</p>
+
           <p className="text-sm flex items-center gap-1">
-            Made with <Heart size={14} className="text-blue-400" /> for storytellers
+            <a href="https://www.buymeacoffee.com/Monalika" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{ height: "50px", width: "200px" }} /></a>
           </p>
         </div>
       </div>
