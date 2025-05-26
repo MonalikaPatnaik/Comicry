@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -83,13 +82,46 @@ const ComicCreator = () => {
         description: "Preparing your comic for download...",
       });
       
-      const canvas = await html2canvas(comicStrip, {
-        backgroundColor: '#f8fafc',
-        scale: 2,
-        logging: false,
-        allowTaint: true,
-        useCORS: true
+      // Create a wrapper div with proper styling for the export
+      const exportWrapper = document.createElement('div');
+      exportWrapper.style.position = 'absolute';
+      exportWrapper.style.left = '-9999px';
+      exportWrapper.style.top = '-9999px';
+      exportWrapper.style.backgroundColor = 'white';
+      exportWrapper.style.padding = '10px'; // Reduced from 20px
+      
+      // Clone the comic strip with proper layout for export
+      const exportStrip = document.createElement('div');
+      exportStrip.style.display = 'flex';
+      exportStrip.style.flexWrap = 'wrap';
+      exportStrip.style.gap = '8px'; // Reduced from 20px
+      exportStrip.style.justifyContent = 'center';
+      exportStrip.style.padding = '10px'; // Reduced from 20px
+      
+      // Clone each panel for export
+      const panelElements = comicStrip.querySelectorAll('.comic-panel');
+      panelElements.forEach(panel => {
+        const clonedPanel = panel.cloneNode(true) as HTMLElement;
+        clonedPanel.style.margin = '2px'; // Reduced from 10px
+        exportStrip.appendChild(clonedPanel);
       });
+      
+      exportWrapper.appendChild(exportStrip);
+      document.body.appendChild(exportWrapper);
+      
+      // Use html2canvas with improved settings
+      const canvas = await html2canvas(exportWrapper, {
+        backgroundColor: '#ffffff',
+        scale: 2, // Higher scale for better quality
+        useCORS: true,
+        allowTaint: true,
+        logging: false,
+        windowWidth: exportWrapper.scrollWidth + 50, // Reduced from 100
+        windowHeight: exportWrapper.scrollHeight + 50, // Reduced from 100
+      });
+      
+      // Remove the temporary export elements
+      document.body.removeChild(exportWrapper);
       
       // Convert the canvas to a data URL
       const dataUrl = canvas.toDataURL('image/png');
@@ -137,13 +169,45 @@ const ComicCreator = () => {
         description: "Preparing your comic for sharing...",
       });
       
-      const canvas = await html2canvas(comicStrip, {
-        backgroundColor: '#f8fafc',
-        scale: 2,
-        logging: false,
-        allowTaint: true,
-        useCORS: true
+     const exportWrapper = document.createElement('div');
+      exportWrapper.style.position = 'absolute';
+      exportWrapper.style.left = '-9999px';
+      exportWrapper.style.top = '-9999px';
+      exportWrapper.style.backgroundColor = 'white';
+      exportWrapper.style.padding = '10px';
+      
+      // Clone the comic strip with proper layout for export
+      const exportStrip = document.createElement('div');
+      exportStrip.style.display = 'flex';
+      exportStrip.style.flexWrap = 'wrap';
+      exportStrip.style.gap = '8px';
+      exportStrip.style.justifyContent = 'center';
+      exportStrip.style.padding = '10px';
+      
+      // Clone each panel for export
+      const panelElements = comicStrip.querySelectorAll('.comic-panel');
+      panelElements.forEach(panel => {
+        const clonedPanel = panel.cloneNode(true) as HTMLElement;
+        clonedPanel.style.margin = '2px';
+        exportStrip.appendChild(clonedPanel);
       });
+      
+      exportWrapper.appendChild(exportStrip);
+      document.body.appendChild(exportWrapper);
+      
+      // Use html2canvas with the same settings as download
+      const canvas = await html2canvas(exportWrapper, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        logging: false,
+        windowWidth: exportWrapper.scrollWidth + 50,
+        windowHeight: exportWrapper.scrollHeight + 50,
+      });
+      
+      // Remove the temporary export elements
+      document.body.removeChild(exportWrapper);
       
       // Convert the canvas to a blob
       canvas.toBlob(async (blob) => {

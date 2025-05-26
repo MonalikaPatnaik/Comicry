@@ -5,7 +5,7 @@ import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { characterEmotions, characterVariants, getCharacterImagePath } from "@/data/character-options";
+import { characterEmotions, characterVariants, characterTypesExtended, getCharacterImagePath } from "@/data/character-options";
 import { Move, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface CharacterCustomizerProps {
@@ -26,13 +26,12 @@ const CharacterCustomizer = ({ character, updateCharacter, removeCharacter }: Ch
     });
   };
 
-  // Check if character type supports emotions and variants
-  // For custom images, we allow all customizations
-  const supportsEmotions = isCustomImage || character.type.includes("hero") || character.type.includes("sidekick") || 
-                         character.type.includes("civilian") || character.type.includes("villain") || 
-                         character.type.includes("mentor");
+  // Find character type information
+  const characterTypeInfo = characterTypesExtended.find(c => c.id === character.type);
   
-  const supportsVariants = isCustomImage || !character.type.includes("animal");
+  // Check if character type supports emotions
+  // For custom images, we allow all customizations
+  const supportsEmotions = isCustomImage || (characterTypeInfo?.supportsEmotions ?? false);
   
   return (
     <div className="bg-gray-50 p-4 rounded-md space-y-4 max-h-[300px] overflow-y-auto">
@@ -67,26 +66,6 @@ const CharacterCustomizer = ({ character, updateCharacter, removeCharacter }: Ch
             <SelectContent className="bg-white">
               {characterEmotions.map((emotion) => (
                 <SelectItem key={emotion.id} value={emotion.id}>{emotion.name}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-      )}
-      
-      {/* Variants dropdown - only show if supported */}
-      {supportsVariants && (
-        <div className="space-y-1">
-          <Label>View</Label>
-          <Select
-            value={character.variant || "front"}
-            onValueChange={(value) => updateProperty("variant", value)}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select view" />
-            </SelectTrigger>
-            <SelectContent className="bg-white">
-              {characterVariants.map((variant) => (
-                <SelectItem key={variant.id} value={variant.id}>{variant.name}</SelectItem>
               ))}
             </SelectContent>
           </Select>

@@ -13,18 +13,6 @@ const Header = () => {
             <p className="text-sm text-blue-100">Tell your story</p>
           </div>
         </div>
-        
-        <div className="flex items-center gap-2">
-          <Button size="sm" variant="secondary" className="hidden sm:flex items-center gap-2">
-            <Download size={16} />
-            <span>Save</span>
-          </Button>
-          
-          <Button size="sm" className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600">
-            <Share2 size={16} />
-            <span>Share</span>
-          </Button>
-        </div>
       </div>
     </header>
   );

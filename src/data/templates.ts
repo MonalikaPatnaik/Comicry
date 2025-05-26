@@ -7,11 +7,11 @@ export const templates: ComicTemplate[] = [
     id: "template1",
     title: "Hero's Journey",
     description: "Follow our hero as they embark on an exciting adventure.",
-    previewImage: "/templates/hero-journey.jpg",
+    previewImage: "/templates/hero-journey.png",
     panels: [
       {
         id: "panel-1",
-        background: "/backgrounds/city-street.jpg",
+        background: "/backgrounds/city-street.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 30, y: 50 }, scale: 1, flip: false, emotion: "default", variant: "front" }
         ],
@@ -22,7 +22,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-2",
-        background: "/backgrounds/city-street.jpg",
+        background: "/backgrounds/city-street.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 25, y: 60 }, scale: 1, flip: false, emotion: "default", variant: "front" },
           { id: "char-2", type: "sidekick", position: { x: 70, y: 60 }, scale: 1, flip: true, emotion: "happy", variant: "front" }
@@ -35,7 +35,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-3",
-        background: "/backgrounds/castle.jpg",
+        background: "/backgrounds/castle.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 30, y: 60 }, scale: 1, flip: false, emotion: "surprised", variant: "front" },
           { id: "char-2", type: "sidekick", position: { x: 70, y: 60 }, scale: 1, flip: true, emotion: "default", variant: "front" }
@@ -47,7 +47,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-4",
-        background: "/backgrounds/castle.jpg",
+        background: "/backgrounds/castle.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 25, y: 60 }, scale: 1, flip: false, emotion: "angry", variant: "front" },
           { id: "char-2", type: "sidekick", position: { x: 70, y: 60 }, scale: 1, flip: true, emotion: "surprised", variant: "front" },
@@ -64,11 +64,11 @@ export const templates: ComicTemplate[] = [
     id: "template2",
     title: "Office Comedy",
     description: "A humorous day in the life of office workers.",
-    previewImage: "/templates/office-comedy.jpg",
+    previewImage: "/templates/office-comedy.png",
     panels: [
       {
         id: "panel-1",
-        background: "/backgrounds/office.jpg",
+        background: "/backgrounds/office.png",
         characters: [
           { id: "char-1", type: "civilian", position: { x: 30, y: 60 }, scale: 1, flip: false },
           { id: "char-2", type: "civilian", position: { x: 70, y: 60 }, scale: 1, flip: true }
@@ -81,7 +81,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-2",
-        background: "/backgrounds/office.jpg",
+        background: "/backgrounds/office.png",
         characters: [
           { id: "char-1", type: "civilian", position: { x: 30, y: 60 }, scale: 1, flip: false }
         ],
@@ -92,7 +92,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-3",
-        background: "/backgrounds/office.jpg",
+        background: "/backgrounds/office.png",
         characters: [
           { id: "char-2", type: "civilian", position: { x: 70, y: 60 }, scale: 1, flip: true }
         ],
@@ -103,7 +103,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-4",
-        background: "/backgrounds/office.jpg",
+        background: "/backgrounds/office.png",
         characters: [
           { id: "char-1", type: "civilian", position: { x: 30, y: 60 }, scale: 1, flip: false },
           { id: "char-2", type: "civilian", position: { x: 70, y: 60 }, scale: 1, flip: true },
@@ -120,11 +120,11 @@ export const templates: ComicTemplate[] = [
     id: "template3",
     title: "Space Adventure",
     description: "An epic journey through the cosmos with unexpected twists.",
-    previewImage: "/templates/space-adventure.jpg",
+    previewImage: "/templates/space-adventure.png",
     panels: [
       {
         id: "panel-1",
-        background: "/backgrounds/space.jpg",
+        background: "/backgrounds/space.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 30, y: 60 }, scale: 1, flip: false },
           { id: "char-2", type: "sidekick", position: { x: 70, y: 60 }, scale: 1, flip: true }
@@ -136,7 +136,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-2",
-        background: "/backgrounds/space.jpg",
+        background: "/backgrounds/space.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 50, y: 60 }, scale: 1, flip: false }
         ],
@@ -147,7 +147,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-3",
-        background: "/backgrounds/park.jpg",
+        background: "/backgrounds/park.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 50, y: 40 }, scale: 1.2, flip: false }
         ],
@@ -156,7 +156,7 @@ export const templates: ComicTemplate[] = [
       },
       {
         id: "panel-4",
-        background: "/backgrounds/park.jpg",
+        background: "/backgrounds/park.png",
         characters: [
           { id: "char-1", type: "hero", position: { x: 30, y: 60 }, scale: 1, flip: false },
           { id: "char-2", type: "animal", position: { x: 70, y: 60 }, scale: 1, flip: false },

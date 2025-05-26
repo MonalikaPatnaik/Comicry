@@ -60,11 +60,6 @@ export const characterTypesExtended = [
 export const getCharacterImagePath = (character: { type: string, emotion?: string, variant?: string }) => {
   let path = `/characters/${character.type}`;
   
-  // Add variant if present, default to front view
-  if (character.variant) {
-    path += `-${character.variant}`;
-  }
-  
   // Add emotion if present, default to neutral
   if (character.emotion && character.emotion !== "default") {
     path += `-${character.emotion}`;
