@@ -53,7 +53,7 @@ const CharacterCustomizer = ({ character, updateCharacter, removeCharacter }: Ch
       </div>
       
       {/* Emotions dropdown - only show if supported */}
-      {supportsEmotions && (
+      {/* supportsEmotions && (
         <div className="space-y-1">
           <Label>Emotion</Label>
           <Select
@@ -70,7 +70,7 @@ const CharacterCustomizer = ({ character, updateCharacter, removeCharacter }: Ch
             </SelectContent>
           </Select>
         </div>
-      )}
+      ) */}
       
       {/* Size adjustment */}
       <div className="space-y-1">

@@ -270,9 +270,9 @@ const ComicCreator = () => {
   return (
     <div className="space-y-8">
       <div className="text-center max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4 text-blue-600">Comic Creator</h1>
+        <h1 className="text-4xl font-bold mb-4 text-blue-600">Create Your Comic Strip!</h1>
         <p className="text-lg mb-6">
-          Create your own comic strip! Choose from templates or build your own 3-8 panel comic.
+        Choose from templates or build your own 3-8 panel comic.
         </p>
       </div>
       
