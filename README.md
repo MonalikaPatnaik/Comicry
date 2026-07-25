@@ -2,6 +2,8 @@
 
 **Comicry** is a fun and interactive web app that lets you create your own comic strips! Choose from templates or build your comic panel, add characters, backgrounds, speech bubbles, and captions, then download or share your creation with friends.
 
+**Demo**- https://drive.google.com/file/d/10ctCQyGYO_uXv5Fz_206WfI_N-6opULa/view?usp=sharing
+
 ## Features
 
 - 🎨 **Create Custom Comics:** Build comics from scratch or use ready-made templates.
